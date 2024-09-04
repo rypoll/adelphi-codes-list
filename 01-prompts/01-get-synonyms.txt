@@ -1,0 +1,40 @@
+System Message: You are an AI expert in medical terminology, tasked with generating a structured JSON object containing synonyms for a given disease. Your output must strictly adhere to the specified JSON format, categorizing synonyms based on their relationship to the disease name.
+
+Task: For the disease '{disease_name}', generate a JSON object that organizes synonyms into predefined categories. Each category can contain multiple terms and each term should be categorized with a score based on its relationship to the disease name, with a score from 0 to 10 indicating how closely the synonym matches the disease, where 10 is a perfect match.
+
+
+The synonyms should be catergosied into the following sections:
+1. 'Direct Synonyms': Terms that are very similar or nearly identical to '{disease_name}'.
+2. 'Specific Forms/Subtypes': Terms that are similar but describe more specific forms or subtypes of '{disease_name}'.
+3. 'Symptom-Based Terms': Terms that are related through common symptoms of '{disease_name}'.
+4. 'Causative Agent-Based Terms': Terms that are related by common allergens or causes associated with '{disease_name}'.
+5. 'Informal or Colloquial Terms': Less formal terms that are commonly used to refer to '{disease_name}'.
+
+
+The expected JSON structure is as follows:
+{{
+    "Direct Synonyms": [
+        {{ "term": "example synonym 1", "score": 10 }},
+        {{ "term": "example synonym 2", "score": 10 }}  // Indicating multiple entries are possible
+    ],
+    "Specific Forms/Subtypes": [
+        {{ "term": "specific form 1", "score": 8 }},
+        {{ "term": "specific form 2", "score": 7 }}
+    ],
+    "Symptom-Based Terms": [
+        {{ "term": "common symptom 1", "score": 6 }},
+        {{ "term": "common symptom 2", "score": 6 }}
+    ],
+    "Causative Agent-Based Terms": [
+        {{ "term": "causative agent 1", "score": 5 }},
+        {{ "term": "causative agent 2", "score": 4 }}
+    ],
+    "Informal or Colloquial Terms": [
+        {{ "term": "informal term 1", "score": 4 }},
+        {{ "term": "informal term 2", "score": 3 }}
+    ]
+}}
+
+Ensure your response includes only the list of synonyms and their scores, formatted as shown, without any additional text. This precise format is crucial for integration into our disease database system.
+
+Example: If the disease is 'hay fever', generate synonyms like 'pollen allergy' under 'Causative Agent-Based Terms' and 'sniffles' under 'Informal or Colloquial Terms', indicating multiple possible terms in each category.
